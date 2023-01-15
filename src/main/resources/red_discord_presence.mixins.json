@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "com.superredstone.red_discord_presence.mixins",
+  "compatibilityLevel": "JAVA_${java}",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": []
+}

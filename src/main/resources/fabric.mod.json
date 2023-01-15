@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "red_discord_presence",
+  "version": "${version}",
+  "name": "Red Discord Presence",
+  "description": "Show to your Discord friends your fancy Minecraft status!",
+  "authors": [
+    "SuperRedstone"
+  ],
+  "contact": {
+    "homepage": "https://github.com/SuperRedstone/red_discord_presence",
+    "issues": "https://github.com/SuperRedstone/red_discord_presence/issues",
+    "sources": "https://github.com/SuperRedstone/red_discord_presence"
+  },
+  "license": "GNU GPLv3",
+  "icon": "assets/red_discord_presence/logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "modmenu": [
+      "com.superredstone.red_discord_presence.config.ModConfig"
+    ],
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.superredstone.red_discord_presence.RedDiscordPresence"
+      }
+    ]
+  },
+  "mixins": [
+    "red_discord_presence.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabricloader}",
+    "fabric-api": ">=${fabric_api}",
+    "fabric-language-kotlin": ">=${fabric_language_kotlin}",
+    "minecraft": ">=${minecraft}",
+    "java": ">=${java}"
+  }
+}

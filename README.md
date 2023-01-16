@@ -32,7 +32,7 @@
     <br />
     <br />
     <a href="https://github.com/SuperRedstone/red_discord_presence/issues">Report Bug</a>
-    ·
+    ·g
     <a href="https://github.com/SuperRedstone/red_discord_presence/issues">Request Feature</a>
   </p>
 </div>

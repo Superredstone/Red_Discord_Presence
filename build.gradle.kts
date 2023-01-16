@@ -11,7 +11,9 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.CDAGaming:DiscordIPC:0.6.1")
+    //implementation("io.github.CDAGaming:DiscordIPC:0.6.1")
+    modImplementation("io.github.CDAGaming:DiscordIPC:0.6.1")
+    include("io.github.CDAGaming:DiscordIPC:0.6.1")
 
     minecraft("com.mojang", "minecraft", project.extra["minecraft_version"] as String)
     mappings("net.fabricmc", "yarn", project.extra["yarn_mappings"] as String, null, "v2")

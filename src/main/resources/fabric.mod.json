@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "red_discord_presence",
-  "version": "${version}",
+  "version": "1.0.0",
   "name": "Red Discord Presence",
   "description": "Show to your Discord friends your fancy Minecraft status!",
   "authors": [

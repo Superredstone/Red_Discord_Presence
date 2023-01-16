@@ -9,7 +9,7 @@ import com.jagrosh.discordipc.entities.User
 import com.superredstone.red_discord_presence.config.ConfigHandler
 
 class RichPresenceHandler (clientId: Long) {
-    private val client = IPCClient(clientId)// 1063447620556685342)
+    private val client = IPCClient(clientId)
     var startTime: Long = 0
 
     private fun init() {

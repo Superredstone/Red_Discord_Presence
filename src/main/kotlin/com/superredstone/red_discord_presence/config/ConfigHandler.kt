@@ -25,7 +25,11 @@ object ConfigHandler {
     }
 
     fun validateConfig(): Long {
-        return readConfig().clientId ?: defaultClientId
+        if (readConfig().clientId != null) {
+            return readConfig().clientId!!
+        } else {
+            return defaultClientId
+        }
     }
 }
 

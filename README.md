@@ -23,7 +23,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/SuperRedstone/red_discord_presence">
-    <img src="images/logo.png" alt="Logo" width="331" height="631">
+    <img src="https://raw.githubusercontent.com/Superredstone/Red_Discord_Presence/main/images/logo.png" alt="Logo" width="331" height="631">
   </a>
 <h3 align="center">Red Discord Presence</h3>
 

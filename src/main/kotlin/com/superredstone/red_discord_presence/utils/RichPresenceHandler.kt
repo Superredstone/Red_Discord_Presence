@@ -6,10 +6,12 @@ import com.jagrosh.discordipc.IPCListener
 import com.jagrosh.discordipc.entities.Packet
 import com.jagrosh.discordipc.entities.RichPresence
 import com.jagrosh.discordipc.entities.User
+import com.jagrosh.discordipc.exceptions.NoDiscordClientException
+import com.superredstone.red_discord_presence.RedDiscordPresence
 import com.superredstone.red_discord_presence.config.ConfigHandler
 
 class RichPresenceHandler (clientId: Long) {
-    private val client = IPCClient(clientId)
+    private val client: IPCClient = IPCClient(clientId)
     var startTime: Long = 0
 
     private fun init() {
@@ -54,17 +56,26 @@ class RichPresenceHandler (clientId: Long) {
     }
 
     fun setStatus(details: String, state: String, icon: String, iconName: String, gameStartTime: Long, partySize: Int = 0, partyMax: Int = 0, partyPrivacy: Int = 0) {
+
+        // Try to reconnect in case that the game accidentally disconnected before
+        connect()
+
         val builder = RichPresence.Builder()
             .setDetails(details)
             .setState(state)
             .setLargeImage(icon, iconName)
             .setParty("", partySize, partyMax, partyPrivacy)
             .setStartTimestamp(startTime)
+
         client.sendRichPresence(builder.build())
     }
 
     fun connect() {
         this.init()
-        client.connect()
+        try {
+            client.connect()
+        } catch (err: NoDiscordClientException) {
+            RedDiscordPresence.LOGGER.error("Unable to connect to Discord")
+        }
     }
 }

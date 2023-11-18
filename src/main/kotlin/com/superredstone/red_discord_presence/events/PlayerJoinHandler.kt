@@ -10,10 +10,11 @@ import net.minecraft.client.network.ClientPlayNetworkHandler
 class PlayerJoinHandler : ClientPlayConnectionEvents.Join {
     override fun onPlayReady(handler: ClientPlayNetworkHandler?, sender: PacketSender?, client: MinecraftClient?) {
         val cfg = ConfigHandler.readConfig()
+
         if (MinecraftClient.getInstance().isInSingleplayer) {
-            richPresenceHandler.setStatus("Single player", "", cfg.singleplayerImage ?: "", cfg.imageText ?: "", richPresenceHandler.startTime)
+            richPresenceHandler.setStatus("Single player", "", cfg.singleplayerImage ?: "", cfg.imageText ?: "")
         } else {
-             richPresenceHandler.setStatus("Multiplayer", "", cfg.multiplayerImage ?: "", cfg.imageText ?: "", richPresenceHandler.startTime)
+             richPresenceHandler.setStatus("Multiplayer", "", cfg.multiplayerImage ?: "", cfg.imageText ?: "")
         }
     }
 }
